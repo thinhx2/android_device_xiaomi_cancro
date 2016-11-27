@@ -17,10 +17,6 @@ BOARD_VENDOR := xiaomi
 
 CANCRO_PATH := device/xiaomi/cancro
 
-# ReleaseTools
-TARGET_RELEASETOOLS_EXTENSIONS := $(CANCRO_PATH)/releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cancro
-
 TARGET_BOARD_INFO_FILE ?= $(CANCRO_PATH)/board-info.txt
 
 # Bootloader
