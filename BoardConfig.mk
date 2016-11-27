@@ -26,7 +26,6 @@ TARGET_BOARD_INFO_FILE ?= $(CANCRO_PATH)/board-info.txt
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 TARGET_NO_BOOTLOADER         := true
-TARGET_NO_RADIOIMAGE         := true
 
 # Platform
 TARGET_BOARD_PLATFORM     := msm8974
@@ -55,11 +54,6 @@ TARGET_KERNEL_ARCH                 := arm
 TARGET_KERNEL_CONFIG               := cyanogen_cancro_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_DTBTOOL_ARGS                 := -2
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE       := true
-TARGET_INIT_VENDOR_LIB      := libinit_cancro
-TARGET_LIBINIT_DEFINES_FILE := $(CANCRO_PATH)/init/init_cancro.cpp
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE            := true
