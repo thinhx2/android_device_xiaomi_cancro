@@ -73,13 +73,6 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 # FM Radio
 TARGET_FM_LEGACY_PATCHLOADER := true
 
-# Bluetooth
-BOARD_HAVE_BLUETOOTH                        := true
-BOARD_HAVE_BLUETOOTH_QCOM                   := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(CANCRO_PATH)/bluetooth
-QCOM_BT_USE_SMD_TTY                         := true
-BLUETOOTH_HCI_USE_MCT                       := true
-
 # Radio
 TARGET_RIL_VARIANT                := caf
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
