@@ -206,10 +206,7 @@
 
     <!-- Default LED on time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOn">1000</integer>
-
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
-
+    
     <!-- Make things go fast -->
     <bool name="config_ui_enableFadingMarquee">false</bool>
 
