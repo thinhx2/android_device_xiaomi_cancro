@@ -40,8 +40,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8974 \
-    libxml2 \
-    Snap
+    libxml2
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -106,9 +105,6 @@ PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
     NfcNci \
     Tag
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/releasetools/device_check.sh:install/bin/device_check.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
