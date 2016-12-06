@@ -17,10 +17,6 @@ BOARD_VENDOR := xiaomi
 
 CANCRO_PATH := device/xiaomi/cancro
 
-# ReleaseTools
-TARGET_RELEASETOOLS_EXTENSIONS := $(CANCRO_PATH)/releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cancro
-
 TARGET_BOARD_INFO_FILE ?= $(CANCRO_PATH)/board-info.txt
 
 # Bootloader
@@ -134,12 +130,6 @@ TARGET_RECOVERY_DENSITY            := xhdpi
 TARGET_RECOVERY_FSTAB              := $(CANCRO_PATH)/rootdir/root/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT       := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-
-# CM Hardware
-BOARD_USES_CYANOGEN_HARDWARE = true
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(CANCRO_PATH)/cmhw
 
 # No old RPC for prop
 TARGET_NO_RPC := true
