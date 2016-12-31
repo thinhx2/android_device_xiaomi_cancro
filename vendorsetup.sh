@@ -1,1 +1,1 @@
-add_lunch_combo aokp_cancro-userdebug
+add_lunch_combo tesla_cancro-userdebug
