@@ -20,7 +20,7 @@ TARGET_SCREEN_WIDTH := 1080
 $(call inherit-product, vendor/carbon/config/gsm.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/vendor/config/common.mk)
+$(call inherit-product, vendor/carbon/config/common.mk)
 
 # Inherit from cancro device
 $(call inherit-product, device/xiaomi/cancro/cancro.mk)
@@ -29,7 +29,7 @@ PRODUCT_NAME := carbon_cancro
 PRODUCT_DEVICE := cancro
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := MI Cancro
+PRODUCT_MODEL := MI3W
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
