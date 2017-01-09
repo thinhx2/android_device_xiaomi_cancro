@@ -20,17 +20,17 @@ TARGET_SCREEN_WIDTH := 1080
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/aokp/configs/common_full_phone.mk)
+$(call inherit-product, vendor/zos/common.mk)
 
 # Inherit from cancro device
 $(call inherit-product, device/xiaomi/cancro/cancro.mk)
 
-PRODUCT_NAME :=aokp_cancro
+PRODUCT_NAME := zos_cancro
 PRODUCT_DEVICE := cancro
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := MI Cancro
+PRODUCT_MODEL := MI3W
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
+PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="thinhx2"
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
