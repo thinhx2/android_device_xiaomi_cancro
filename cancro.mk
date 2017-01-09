@@ -41,7 +41,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8974 \
     libxml2 \
-    Snap
+    Camero
 
 # DRM
 PRODUCT_PACKAGES += \
