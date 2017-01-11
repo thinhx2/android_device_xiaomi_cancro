@@ -126,4 +126,3 @@ void vendor_load_properties()
 
     init_alarm_boot_properties();
 }
-ro.product.device = cancro
