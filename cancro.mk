@@ -47,6 +47,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshims_wvm
 
+# RIL
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
