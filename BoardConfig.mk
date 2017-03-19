@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -45,16 +46,23 @@ BOARD_GLOBAL_CFLAGS   += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64 -DUSE_RIL_VE
 BOARD_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
 
 # Kernel
-BOARD_KERNEL_CMDLINE               := console=none vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE               := console=none vmalloc=340M androidboot.hardware=qcom msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_SEPARATED_DT          := true
 BOARD_KERNEL_BASE                  := 0x00000000
 BOARD_KERNEL_PAGESIZE              := 2048
 BOARD_MKBOOTIMG_ARGS               := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 TARGET_KERNEL_SOURCE               := kernel/xiaomi/cancro
 TARGET_KERNEL_ARCH                 := arm
-TARGET_KERNEL_CONFIG               := cyanogen_cancro_defconfig
+TARGET_KERNEL_CONFIG               := lineageos_cancro_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_DTBTOOL_ARGS                 := -2
+
+# Kernel headers
+TARGET_BOARD_KERNEL_HEADERS := $(CANCRO_PATH)/kernel-headers
+
+# Toolchain
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE       := true
@@ -67,10 +75,27 @@ TARGET_POWERHAL_VARIANT             := qcom
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(CANCRO_PATH)/power/power_ext.c
 
 # Audio
-BOARD_USES_ALSA_AUDIO                      := true
+BOARD_USES_ALSA_AUDIO := true
+BOARD_FORTEMEDIA_QDSP_ENABLED := true
+AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
+AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
+AUDIO_FEATURE_ENABLED_ANC_HEADSET := false
+AUDIO_FEATURE_ENABLED_FLUENCE := true
+AUDIO_FEATURE_ENABLED_HFP := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
+AUDIO_FEATURE_PCM_IOCTL_ENABLED := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+AUDIO_FEATURE_ENABLED_USBAUDIO := true
+AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
+AUDIO_FEATURE_DYNAMIC_MIXER_PATHS := true
+TARGET_USES_QCOM_MM_AUDIO := true
 
 # FM Radio
+BOARD_HAVE_QCOM_FM := true
 TARGET_FM_LEGACY_PATCHLOADER := true
 
 # Bluetooth
@@ -189,4 +214,3 @@ BOARD_SEPOLICY_DIRS += \
         $(CANCRO_PATH)/sepolicy
 
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk
--include vendor/qcom/binaries/msm8974/graphics/BoardConfigVendor.mk

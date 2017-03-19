@@ -27,26 +27,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 #
-# Update USB serial number from persist storage if present, if not update
-# with value passed from kernel command line, if none of these values are
-# set then use the default value. This order is needed as for devices which
-# do not have unique serial number.
-# User needs to set unique usb serial number to persist.usb.serialno
-#
-serialno=`getprop persist.usb.serialno`
-case "$serialno" in
-    "")
-    serialnum=`getprop ro.serialno`
-    case "$serialnum" in
-        "");; #Do nothing, use default serial number
-        *)
-        echo "$serialnum" > /sys/class/android_usb/android0/iSerial
-    esac
-    ;;
-    *)
-    echo "$serialno" > /sys/class/android_usb/android0/iSerial
-esac
-
 chown -h root.system /sys/devices/platform/msm_hsusb/gadget/wakeup
 chmod -h 220 /sys/devices/platform/msm_hsusb/gadget/wakeup
 
@@ -63,7 +43,7 @@ usb_config=`getprop persist.sys.usb.config`
 case "$usb_config" in
     "" | "adb" | "none") #USB persist config not set, select default configuration
         case $target in
-            "msm8960" | "msm8974" | "msm8226" | "msm8610" | "apq8084")
+            "msm8974")
                          if [ -z "$debuggable" -o "$debuggable" = "1" ]; then
                              setprop persist.sys.usb.config mtp,adb
                          else
@@ -82,19 +62,6 @@ esac
 target=`getprop ro.product.device`
 cdromname="/system/etc/cdrom_install.iso"
 cdromenable=`getprop persist.service.cdrom.enable`
-case "$target" in
-        "msm8226" | "msm8610")
-                case "$cdromenable" in
-                        0)
-                                echo "" > /sys/class/android_usb/android0/f_mass_storage/lun0/file
-                                ;;
-                        1)
-                                echo "mounting usbcdrom lun"
-                                echo $cdromname > /sys/class/android_usb/android0/f_mass_storage/lun0/file
-                                ;;
-                esac
-                ;;
-esac
 
 #
 # Do target specific things
@@ -103,18 +70,6 @@ case "$target" in
     "msm8974")
 # Select USB BAM - 2.0 or 3.0
         echo ssusb > /sys/bus/platform/devices/usb_bam/enable
-    ;;
-    "apq8084")
-	if [ "$baseband" == "apq" ]; then
-		echo "msm_hsic_host" > /sys/bus/platform/drivers/xhci_msm_hsic/unbind
-	fi
-    ;;
-    "msm8226")
-         if [ -e /sys/bus/platform/drivers/msm_hsic_host ]; then
-             if [ ! -L /sys/bus/usb/devices/1-1 ]; then
-                 echo msm_hsic_host > /sys/bus/platform/drivers/msm_hsic_host/unbind
-             fi
-         fi
     ;;
 esac
 

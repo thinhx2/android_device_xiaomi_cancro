@@ -1,0 +1,3 @@
+add_lunch_combo citrus_cancro-user
+add_lunch_combo citrus_cancro-userdebug
+add_lunch_combo citrus_cancro-eng

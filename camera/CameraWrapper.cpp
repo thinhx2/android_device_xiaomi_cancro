@@ -22,6 +22,8 @@
 */
 
 #define LOG_NDEBUG 1
+#define REAR_CAMERA_ID 0
+#define FRONT_CAMERA_ID 1
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -105,6 +107,7 @@ static int check_vendor_module()
 static char *camera_fixup_getparams(int id __attribute__((unused)),
         const char *settings)
 {
+	const char *supportedSceneModes = "auto,asd,landscape,snow,beach,sunset,night,portrait,backlight,sports,steadyphoto,flowers,candlelight,fireworks,party,night-portrait,theatre,action,AR,hdr";
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
@@ -113,6 +116,14 @@ static char *camera_fixup_getparams(int id __attribute__((unused)),
     params.dump();
 #endif
 
+	params.set("preview-fps-range-values", "(7500,30000),(8000,30000),(30000,30000)");
+	params.set("preview-fps-range", "30000,30000");
+	if (id == REAR_CAMERA_ID) {
+        params.set(android::CameraParameters::KEY_SUPPORTED_SCENE_MODES, supportedSceneModes);
+	params.set("min-focus-pos-index", "0");
+        params.set("max-focus-pos-index", "100");
+	params.set("focus-distances", "0.10,1.20,Infinity");
+	}
 #if !LOG_NDEBUG
     ALOGV("%s: Fixed parameters:", __FUNCTION__);
     params.dump();
