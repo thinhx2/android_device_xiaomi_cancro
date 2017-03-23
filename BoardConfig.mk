@@ -215,3 +215,5 @@ BOARD_SEPOLICY_DIRS += \
 
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk
 -include vendor/qcom/binaries/msm8974/graphics/BoardConfigVendor.mk
+
+TARGET_USE_CM_RAMDISK := true
