@@ -208,10 +208,10 @@ DONT_DEXPREOPT_PREBUILTS := true
 
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 
 #BOARD_SEPOLICY_DIRS += \
-#    $(PLATFORM_PATH)/sepolicy
+    $(PLATFORM_PATH)/sepolicy
 
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk
 -include vendor/qcom/binaries/msm8974/graphics/BoardConfigVendor.mk
