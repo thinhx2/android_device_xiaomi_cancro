@@ -72,6 +72,7 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
 # FM Radio
 TARGET_FM_LEGACY_PATCHLOADER := true
+BOARD_HAVE_QCOM_FM := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
