@@ -226,11 +226,6 @@ PRODUCT_PACKAGES += \
 # Baseband assertion
 PRODUCT_PACKAGES += librecovery_updater_cancro
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
-
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
@@ -270,10 +265,7 @@ $(call inherit-product-if-exists, $(QCPATH)/prebuilt_HY11/target/product/msm8974
 endif
 
 # call dalvik heap config
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
-
-# call hwui memory config
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # call the proprietary setup
 $(call inherit-product, vendor/xiaomi/cancro/cancro-vendor.mk)

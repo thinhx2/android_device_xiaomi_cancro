@@ -17,16 +17,11 @@ BOARD_VENDOR := xiaomi
 
 CANCRO_PATH := device/xiaomi/cancro
 
-# ReleaseTools
-TARGET_RELEASETOOLS_EXTENSIONS := $(CANCRO_PATH)/releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cancro
-
 TARGET_BOARD_INFO_FILE ?= $(CANCRO_PATH)/board-info.txt
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 TARGET_NO_BOOTLOADER         := true
-TARGET_NO_RADIOIMAGE         := true
 
 # Platform
 TARGET_BOARD_PLATFORM     := msm8974
@@ -56,11 +51,6 @@ TARGET_KERNEL_ARCH                 := arm
 TARGET_KERNEL_CONFIG               := cyanogen_cancro_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_DTBTOOL_ARGS                 := -2
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE       := true
-TARGET_INIT_VENDOR_LIB      := libinit_cancro
-TARGET_LIBINIT_DEFINES_FILE := $(CANCRO_PATH)/init/init_cancro.cpp
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE            := true
@@ -138,7 +128,7 @@ BOARD_FLASH_BLOCK_SIZE              := 131072
 
 # Recovery
 RECOVERY_FSTAB_VERSION             := 2
-TARGET_RECOVERY_DENSITY            := xhdpi
+TW_THEME := landscape_hdpi
 TARGET_RECOVERY_FSTAB              := $(CANCRO_PATH)/rootdir/root/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT       := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
