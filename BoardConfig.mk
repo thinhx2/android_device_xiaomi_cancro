@@ -176,7 +176,7 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO 
 
 # Compile libhwui in performance mode
-HWUI_COMPILE_FOR_PERF := true
+#HWUI_COMPILE_FOR_PERF := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
