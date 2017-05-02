@@ -181,6 +181,9 @@
         <item>"ethernet,9,9,9,-1,true"</item>
     </string-array>
 
+    <!-- Configuration to support SIM contact batch operation -->
+    <bool name="config_sim_phonebook_batch_operation">false</bool>
+    
     <!-- Enable overlay for all location components. -->
     <!--bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
@@ -250,4 +253,7 @@
 
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
+        <!-- Night display  -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+    
 </resources>
