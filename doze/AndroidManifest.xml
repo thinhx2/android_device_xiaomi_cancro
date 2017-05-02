@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cyanogenmod.doze.cancro"
+    package="com.slimroms.doze.cancro"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -10,21 +10,21 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="21"/>
+        android:targetSdkVersion="23"/>
 
     <application
         android:label="CancroDoze"
         android:persistent="true">
 
-        <receiver android:name="com.cyanogenmod.doze.cancro.BootCompletedReceiver">
+        <receiver android:name="com.slimroms.doze.cacnro.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.cyanogenmod.doze.cancro.SensorsDozeService"
-                 android:permission="SensorsDozeService">
+        <service android:name="com.slimroms.doze.cancro.CancroDozeService"
+                 android:permission="CancroDozeService">
         </service>
 
         <activity

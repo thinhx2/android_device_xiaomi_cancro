@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
+ * Copyright (c) 2016 The SlimRoms Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,35 +14,22 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.doze.cancro;
+package com.slimroms.doze.cancro;
 
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.util.Log;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "SettingsDevice";
+    private static final String TAG = "CancroDoze";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Starting service");
-        enableComponent(context, WakeUpGestureSettings.class.getName());
-        context.startService(new Intent(context, SensorsDozeService.class));
+        context.startService(new Intent(context, CancroDozeService.class));
     }
 
-    private void enableComponent(Context context, String component) {
-        ComponentName name = new ComponentName(context, component);
-        PackageManager pm = context.getPackageManager();
-        if (pm.getComponentEnabledSetting(name)
-                == PackageManager.COMPONENT_ENABLED_STATE_DISABLED) {
-            pm.setComponentEnabledSetting(name,
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                    PackageManager.DONT_KILL_APP);
-        }
-    }
 }

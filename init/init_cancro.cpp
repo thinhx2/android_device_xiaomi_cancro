@@ -1,6 +1,5 @@
 /*
    Copyright (c) 2015, The Linux Foundation. All rights reserved.
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -117,6 +115,11 @@ void vendor_load_properties()
             break;
         case 1974:
             property_set("ro.product.model", "MI 4");
+            break;
+        case 1972:
+            property_set("ro.product.model", "MI 4LTE");
+            property_set("ro.telephony.default_network", "8");
+            property_set("telephony.lteOnGSMDevice", "1");
             break;
         default:
             // Other unsupported variants
