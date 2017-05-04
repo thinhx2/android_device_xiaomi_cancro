@@ -11,3 +11,4 @@
 /dev/block/bootdevice/by-name/config                /frp            emmc    defaults                                                                  defaults
 
 /devices/platform/xhci-hcd/usb1*                    auto            auto    defaults                                                                 voldmanaged=usb:auto
+/dev/block/zram0                                 none         swap    defaults                                zramsize=998146325
