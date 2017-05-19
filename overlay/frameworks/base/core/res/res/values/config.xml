@@ -56,7 +56,9 @@
         <item>"gprs:4092,8760,11680,4096,8760,11680"</item>
         <item>"evdo:4094,87380,524288,4096,16384,262144"</item>
     </string-array>
-
+    <!-- Configuration to support SIM contact batch operation -->
+    <bool name="config_sim_phonebook_batch_operation">false</bool>
+    
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
 
@@ -284,4 +286,7 @@
 
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
+    
+    <!-- Night display  -->
+    <bool name="config_nightDisplayAvailable">true</bool>
 </resources>
