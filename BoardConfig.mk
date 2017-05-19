@@ -52,7 +52,7 @@ BOARD_KERNEL_PAGESIZE              := 2048
 BOARD_MKBOOTIMG_ARGS               := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 TARGET_KERNEL_SOURCE               := kernel/xiaomi/cancro
 TARGET_KERNEL_ARCH                 := arm
-TARGET_KERNEL_CONFIG               := cyanogen_cancro_defconfig
+TARGET_KERNEL_CONFIG               := lineageos_cancro_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_DTBTOOL_ARGS                 := -2
 
@@ -72,6 +72,7 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
 # FM Radio
 TARGET_FM_LEGACY_PATCHLOADER := true
+BOARD_HAVE_QCOM_FM := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
@@ -161,6 +162,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+ 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
