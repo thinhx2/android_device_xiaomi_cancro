@@ -32,6 +32,9 @@
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
+    <!-- Configuration to support SIM contact batch operation -->
+    <bool name="config_sim_phonebook_batch_operation">false</bool>
+    
     <!-- The duration (in milliseconds) that the radio will scan for a signal
     when there's no network connection. If the scan doesn't timeout, use zero -->
     <integer name="config_radioScanningTimeout">9000</integer>
@@ -265,4 +268,7 @@
 
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Night display  -->
+    <bool name="config_nightDisplayAvailable">true</bool>
 </resources>
