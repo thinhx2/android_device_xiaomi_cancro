@@ -55,7 +55,7 @@ public class KeyDisabler {
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(KeyDisabler_path(), (state ? "1" : "0"));
+        return FileUtils.writeLine(KeyDisabler_path(), state ? "0" : "1");
     }
 
 }

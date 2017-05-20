@@ -1,4 +1,3 @@
-ro.product.device=cancro
 ro.vendor.extension_library=libqti-perfd-client.so
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
@@ -59,9 +58,12 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=false
 af.fast_track_multiplier=1
 audio_hal.period_size=192
+audio.offload.buffer.size.kb=64
 
 ro.qualcomm.perf.cores_online=1
 dalvik.vm.dex2oat-swap=false
+dalvik.vm.boot-dex2oat-threads=4
+dalvik.vm.dex2oat-threads=3
 ro.gps.agps_provider=1
 persist.debug.wfd.enable=1
 persist.demo.hdmirotationlock=false
@@ -72,6 +74,7 @@ persist.hwc.mdpcomp.enable=true
 persist.timed.enable=true
 persist.sys.wfd.virtual=0
 persist.usb.hvdcp.detect=true
+persist.graphics.vulkan.disable=true
 
 persist.camera.cpp.duplication=false
 camera2.portability.force_api=1
@@ -91,5 +94,11 @@ ro.qualcomm.bluetooth.nap=true
 ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
 
-ro.frp.pst=/dev/block/bootdevice/by-name/config
 ro.sys.sdcardfs=true
+###      Tweaks and UX improvements      ###
+#  exclusively made by the halogenOS team  #
+
+# Higher fling velocities to smooth scrolling
+# and provide better responsiveness
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
