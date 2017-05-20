@@ -229,7 +229,10 @@ PRODUCT_PACKAGES += librecovery_updater_cancro
 # Gello
 PRODUCT_PACKAGES += \
     Gello
-
+    
+# Telephony
+PRODUCT_PACKAGES  += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
 
 # Permissions
 PRODUCT_COPY_FILES += \
