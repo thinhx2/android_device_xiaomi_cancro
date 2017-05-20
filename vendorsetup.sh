@@ -1,1 +1,1 @@
-add_lunch_combo aosp_cancro-userdebug
+add_lunch_combo XOS_cancro-userdebug
