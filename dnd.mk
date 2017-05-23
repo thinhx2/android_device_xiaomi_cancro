@@ -25,7 +25,7 @@ $(call inherit-product, vendor/aosp/common.mk)
 # Inherit from cancro device
 $(call inherit-product, device/xiaomi/cancro/cancro.mk)
 
-PRODUCT_NAME := aosp_cancro
+PRODUCT_NAME := dnd_cancro
 PRODUCT_DEVICE := cancro
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
