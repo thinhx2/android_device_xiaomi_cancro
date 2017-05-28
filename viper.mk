@@ -35,6 +35,3 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 DEFAULT_ROOT_METHOD := magisk
-
-# Support Poison
-PURE_POISON=true
