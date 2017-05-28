@@ -1,2 +1,0 @@
-create_pty(irsc_util)
-allow irsc_util irsc_util_exec:file execute_no_trans;
