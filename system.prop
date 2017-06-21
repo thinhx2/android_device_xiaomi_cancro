@@ -1,3 +1,4 @@
+ro.product.device=cancro
 ro.vendor.extension_library=libqti-perfd-client.so
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
@@ -91,4 +92,3 @@ ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
 
 ro.frp.pst=/dev/block/bootdevice/by-name/config
-ro.sys.sdcardfs=true
