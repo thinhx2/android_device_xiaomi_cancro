@@ -1,3 +1,2 @@
 #============= device ==============
 allow device labeledfs:filesystem associate;
-type persist_block_device, dev_type;

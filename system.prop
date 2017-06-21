@@ -92,4 +92,7 @@ ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
 
 ro.frp.pst=/dev/block/bootdevice/by-name/config
-ro.sys.sdcardfs=true
+ro.sys.sdcardfs=false
+
+#LegendROM Version
+ro.legendrom.version=17.0

@@ -1,1 +1,1 @@
-add_lunch_combo ownrom_cancro-userdebug
+add_lunch_combo lineage_cancro-userdebug
