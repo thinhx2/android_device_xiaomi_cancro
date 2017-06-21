@@ -1,1 +1,1 @@
-add_lunch_combo nethunter_cancro-userdebug
+add_lunch_combo ownrom_cancro-userdebug

@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nethunter.mk
+    $(LOCAL_DIR)/ownrom.mk
